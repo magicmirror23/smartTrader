@@ -1,7 +1,8 @@
-// Admin API service
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface ModelStatus {
   model_version: string;
@@ -44,7 +45,7 @@ export interface CanaryStatus {
 
 @Injectable({ providedIn: 'root' })
 export class AdminApiService {
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

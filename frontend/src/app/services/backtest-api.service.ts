@@ -1,7 +1,7 @@
-// Backtest API service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface BacktestRunRequest {
   tickers: string[];
@@ -43,7 +43,7 @@ export interface BacktestResults {
 
 @Injectable({ providedIn: 'root' })
 export class BacktestApiService {
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -55,4 +55,3 @@ export class BacktestApiService {
     return this.http.get<BacktestResults>(`${this.base}/backtest/${encodeURIComponent(jobId)}/results`);
   }
 }
-

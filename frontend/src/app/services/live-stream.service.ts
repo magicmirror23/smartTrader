@@ -1,7 +1,8 @@
-// Live stream service
+
 import { Injectable, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface LiveTick {
   symbol: string;
@@ -52,12 +53,12 @@ export interface CategoryInfo {
 export class LiveStreamService {
   private ws: WebSocket | null = null;
   private sse: EventSource | null = null;
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   /** Emits every incoming tick from multi-symbol stream */
   readonly tick$ = new Subject<LiveTick>();
 
-  /** Current watchlist state (symbol â†’ latest data + sparkline) */
+  /** Current watchlist state (symbol → latest data + sparkline) */
   readonly watchlist$ = new BehaviorSubject<Map<string, WatchlistItem>>(new Map());
 
   /** Whether we are currently connected */
@@ -108,7 +109,7 @@ export class LiveStreamService {
   connectMulti(symbols: string[]): void {
     this.disconnect();
 
-    const wsUrl = `ws://${window.location.host}${this.base}/stream/multi`;
+    const wsUrl = `${environment.wsUrl}${this.base}/stream/multi`;
 
     try {
       this.ws = new WebSocket(wsUrl);
@@ -187,3 +188,4 @@ export class LiveStreamService {
     this.connected$.next(false);
   }
 }
+

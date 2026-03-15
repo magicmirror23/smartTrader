@@ -1,6 +1,6 @@
-// Price stream service
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface PriceTick {
   timestamp: string;
@@ -14,8 +14,8 @@ export class PriceStreamService {
 
   connect(symbol: string): Observable<PriceTick> {
     return new Observable<PriceTick>(subscriber => {
-      const wsUrl = `ws://${window.location.host}/api/v1/stream/price/${encodeURIComponent(symbol)}`;
-      const sseUrl = `/api/v1/stream/price/${encodeURIComponent(symbol)}`;
+      const wsUrl = `${environment.wsUrl}/api/v1/stream/price/${encodeURIComponent(symbol)}`;
+      const sseUrl = `${environment.apiUrl}/stream/price/${encodeURIComponent(symbol)}`;
 
       try {
         const ws = new WebSocket(wsUrl);

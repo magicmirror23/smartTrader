@@ -1,8 +1,8 @@
-// Prediction API service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface PredictionResult {
   ticker: string;
@@ -42,7 +42,7 @@ export interface OptionSignal {
 
 @Injectable({ providedIn: 'root' })
 export class PredictionApiService {
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

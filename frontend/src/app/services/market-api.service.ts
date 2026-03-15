@@ -1,7 +1,7 @@
-// Market API service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface MarketStatus {
   phase: 'pre_open' | 'open' | 'post_close' | 'closed' | 'holiday' | 'weekend';
@@ -51,7 +51,7 @@ export interface BotStatus {
 
 @Injectable({ providedIn: 'root' })
 export class MarketApiService {
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

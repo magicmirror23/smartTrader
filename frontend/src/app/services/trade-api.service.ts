@@ -1,7 +1,7 @@
-// Trade API service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface TradeIntentRequest {
   ticker: string;
@@ -51,7 +51,7 @@ export interface Execution {
 
 @Injectable({ providedIn: 'root' })
 export class TradeApiService {
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -63,4 +63,3 @@ export class TradeApiService {
     return this.http.post<Execution>(`${this.base}/execute`, { intent_id: intentId });
   }
 }
-

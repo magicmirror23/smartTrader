@@ -1,8 +1,8 @@
-// Paper API service
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface AccountMetrics {
   sharpe: number | null;
@@ -27,7 +27,7 @@ export interface EquityPoint {
 
 @Injectable({ providedIn: 'root' })
 export class PaperApiService {
-  private readonly base = '/api/v1';
+  private readonly base = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
