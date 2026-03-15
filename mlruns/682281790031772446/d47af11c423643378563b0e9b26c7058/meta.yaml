@@ -1,0 +1,15 @@
+artifact_uri: file:C:/Users/merkr/Desktop/project/mlruns/682281790031772446/d47af11c423643378563b0e9b26c7058/artifacts
+end_time: 1773567229422
+entry_point_name: ''
+experiment_id: '682281790031772446'
+lifecycle_stage: active
+run_id: d47af11c423643378563b0e9b26c7058
+run_name: v20260315.093348
+run_uuid: d47af11c423643378563b0e9b26c7058
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773567229311
+status: 3
+tags: []
+user_id: merkr
