@@ -21,6 +21,8 @@
     COPY backend/ ./backend/
     COPY models/registry.json ./models/registry.json
     COPY scripts/ ./scripts/
+
+    COPY storage/raw/ ./storage/raw/
     
     # Copy built Angular files into backend static directory
     COPY --from=frontend-build /app/frontend/dist/stocktrader-frontend/browser ./static

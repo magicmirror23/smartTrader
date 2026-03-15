@@ -36,7 +36,6 @@ models/artifacts/
 !models/registry.json
 
 # Downloaded data
-storage/raw/*.csv
 storage/backtests/*/
 storage/angel_tokens.json
 

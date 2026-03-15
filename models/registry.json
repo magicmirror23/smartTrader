@@ -33,7 +33,24 @@
       },
       "artifact_path": "models\\artifacts\\v20260315.111145",
       "tickers_count": 50
+    },
+    {
+      "version": "v20260315.191227",
+      "timestamp": "2026-03-15T19:12:27.421953+00:00",
+      "seed": 42,
+      "horizon": 1,
+      "metrics": {
+        "accuracy": 0.5833333333333334,
+        "best_iteration": 2,
+        "test_accuracy": 0.5213270142180095,
+        "test_f1": 0.5976095617529881,
+        "test_precision": 0.5,
+        "test_recall": 0.7425742574257426,
+        "optimal_threshold": 0.5000000000000001
+      },
+      "artifact_path": "models\\artifacts\\v20260315.191227",
+      "tickers_count": 50
     }
   ],
-  "latest": "v20260315.111145"
+  "latest": "v20260315.191227"
 }
