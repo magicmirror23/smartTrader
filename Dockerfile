@@ -7,7 +7,7 @@
     RUN npx ng build --configuration production
     
     # ---- Stage 2: Python backend + serve frontend ----
-    FROM python:3.14-slim
+    FROM python:3.13-slim
     
     WORKDIR /app
     
