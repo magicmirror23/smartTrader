@@ -109,7 +109,7 @@ export class LiveStreamService {
   connectMulti(symbols: string[]): void {
     this.disconnect();
 
-    const wsUrl = `${environment.wsUrl}${this.base}/stream/multi`;
+    const wsUrl = `${environment.wsUrl}$/api/v1/stream/multi`;
 
     try {
       this.ws = new WebSocket(wsUrl);
